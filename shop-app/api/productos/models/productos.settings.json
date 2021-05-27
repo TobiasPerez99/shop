@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "productos",
+  "info": {
+    "name": "productos"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "Descripcion": {
+      "type": "text"
+    },
+    "Precio": {
+      "type": "string"
+    },
+    "Nacionalidad": {
+      "type": "string"
+    },
+    "Fabricante": {
+      "type": "string"
+    },
+    "Foto": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "categorias": {
+      "via": "productos",
+      "collection": "categorias"
+    }
+  }
+}
